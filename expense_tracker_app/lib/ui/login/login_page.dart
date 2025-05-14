@@ -1,5 +1,5 @@
 import 'package:expense_tracker_app/ui/login/password_controller.dart';
-import 'package:expense_tracker_app/ui/login/widget/button_google.dart';
+import 'package:expense_tracker_app/ui/login_google/button_google.dart';
 import 'package:expense_tracker_app/ui/login/widget/button_login.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_button_forgot_password.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_buttun_sign_up.dart';
@@ -22,12 +22,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     double searchheight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.green),
       body: Stack(
         children: [
-          SizedBox(
-            height: searchheight * 0.04,
-            child: Container(color: Colors.green),
-          ),
           SafeArea(
             child: SingleChildScrollView(
               child: Padding(
@@ -56,16 +53,16 @@ class _LoginPageState extends State<LoginPage> {
                       TextFieldPassword(passwordController: passwordController),
                       SizedBox(height: searchheight * 0.02),
                       TextButtonForgotPassword(),
-                      SizedBox(height: searchheight * 0.17),
+                      SizedBox(height: searchheight * 0.12),
                       ButtonLogin(),
                       SizedBox(height: searchheight * 0.03),
                       TextButtunSignUp(),
-                      SizedBox(height: searchheight * 0.1),
+                      SizedBox(height: searchheight * 0.07),
                       Text(
                         'or login with',
                         style: TextStyle(color: Colors.black54),
                       ),
-                      SizedBox(height: searchheight * 0.025),
+                      SizedBox(height: searchheight * 0.03),
                       ButtonGoogle(),
                     ],
                   ),

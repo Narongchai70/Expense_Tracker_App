@@ -1,4 +1,7 @@
+import 'package:expense_tracker_app/ui/forgot_password/forgot_password_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class TextButtonForgotPassword extends StatelessWidget {
   const TextButtonForgotPassword({super.key});
@@ -20,7 +23,9 @@ class TextButtonForgotPassword extends StatelessWidget {
                 minimumSize: Size(0, 0),
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Get.to(ForgotPasswordPage());
+              },
               child: Text(
                 'Forgot Password?',
                 style: TextStyle(

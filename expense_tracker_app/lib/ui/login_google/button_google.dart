@@ -1,4 +1,7 @@
+import 'package:expense_tracker_app/ui/home/home_page.dart';
+import 'package:expense_tracker_app/ui/login_google/signIn_with_google';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ButtonGoogle extends StatelessWidget {
   const ButtonGoogle({super.key});
@@ -8,13 +11,22 @@ class ButtonGoogle extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                side: BorderSide(color: Colors.black26),
+                side: const BorderSide(color: Colors.black26),
+                backgroundColor: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () async {
+                final userCredential = await signInWithGoogle();
+                if (userCredential != null) {
+                  Get.to(HomePage());
+                  Get.snackbar('Succeed', 'Sign in with Google successfully');
+                } else {
+                  Get.snackbar('Failed', 'Login failed');
+                }
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -23,8 +35,8 @@ class ButtonGoogle extends StatelessWidget {
                     height: 26,
                     width: 26,
                   ),
-                  SizedBox(width: 10),
-                  Text(
+                  const SizedBox(width: 10),
+                  const Text(
                     'Login with Google',
                     style: TextStyle(
                       color: Colors.black,
