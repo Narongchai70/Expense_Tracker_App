@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638140820687",
+    "project_id": "cash-note-fe21a",
+    "storage_bucket": "cash-note-fe21a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638140820687:android:311eb708669eb5c27f1bba",
+        "android_client_info": {
+          "package_name": "com.example.expense_tracker_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzDDE5iXHtwT97_JoIEonkU_dmqOrtv1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
