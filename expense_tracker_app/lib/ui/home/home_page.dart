@@ -1,7 +1,7 @@
 import 'package:expense_tracker_app/ui/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:expense_tracker_app/ui/login_google/signIn_with_google.dart';
+import 'package:expense_tracker_app/ui/login_google/signIn_out_google.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () async {
-              await signOutGoogle();
+              await signInOutGoogle();
               Get.offAll(() => LoginPage());
               Get.snackbar('Log Out', 'You have logged out.');
             },

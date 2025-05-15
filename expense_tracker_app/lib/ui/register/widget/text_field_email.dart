@@ -6,6 +6,10 @@ class TextFieldEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [TextFieldCustom(hintText: 'Enter your email')]);
+    return Column(
+      children: [
+        Row(children: [TextFieldCustom(hintText: 'Enter your email')]),
+      ],
+    );
   }
 }

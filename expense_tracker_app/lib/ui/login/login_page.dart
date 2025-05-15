@@ -1,10 +1,11 @@
-import 'package:expense_tracker_app/ui/login/password_controller.dart';
+import 'package:expense_tracker_app/ui/controller/password_controller/password_controller.dart';
 import 'package:expense_tracker_app/ui/login_google/button_google.dart';
 import 'package:expense_tracker_app/ui/login/widget/button_login.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_button_forgot_password.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_buttun_sign_up.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_field_email.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_field_password.dart';
+import 'package:expense_tracker_app/widget/extension%20.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -20,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = Get.put(PasswordController());
   @override
   Widget build(BuildContext context) {
-    double searchheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.green),
       body: Stack(
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Align(
                   child: Column(
                     children: [
-                      SizedBox(height: searchheight * 0.02),
+                      SizedBox(height: context.screenHeight * 0.02),
                       Text(
                         'Welcom to',
                         style: TextStyle(
@@ -47,22 +47,40 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: searchheight * 0.03),
+                      SizedBox(height: context.screenHeight * 0.03),
+                      Row(
+                        children: [
+                          Text(
+                            'E-mail',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: context.screenHeight * 0.01),
                       TextFieldEmail(),
-                      SizedBox(height: searchheight * 0.03),
-                      TextFieldPassword(passwordController: passwordController),
-                      SizedBox(height: searchheight * 0.02),
+                      SizedBox(height: context.screenHeight * 0.03),
+                      Row(
+                        children: [
+                          Text(
+                            'Password',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: context.screenHeight * 0.01),
+                      TextFieldPassword(),
+                      SizedBox(height: context.screenHeight * 0.02),
                       TextButtonForgotPassword(),
-                      SizedBox(height: searchheight * 0.12),
+                      SizedBox(height: context.screenHeight * 0.12),
                       ButtonLogin(),
-                      SizedBox(height: searchheight * 0.03),
+                      SizedBox(height: context.screenHeight * 0.03),
                       TextButtunSignUp(),
-                      SizedBox(height: searchheight * 0.07),
+                      SizedBox(height: context.screenHeight * 0.07),
                       Text(
                         'or login with',
                         style: TextStyle(color: Colors.black54),
                       ),
-                      SizedBox(height: searchheight * 0.03),
+                      SizedBox(height: context.screenHeight * 0.03),
                       ButtonGoogle(),
                     ],
                   ),
