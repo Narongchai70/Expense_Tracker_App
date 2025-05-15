@@ -15,7 +15,7 @@ class TextFieldPassword extends StatelessWidget {
       children: [
         Obx(
           () => TextFieldCustom(
-            hintText: '********',
+            hintText: 'Enter your password',
             obscureText: passwordController.obscurePasswordLogin.value,
             suffixIcon: IconButton(
               onPressed: passwordController.togglePasswordLogin,
