@@ -1,4 +1,5 @@
-import 'package:expense_tracker_app/ui/controller/password_controller/password_controller.dart';
+import 'package:expense_tracker_app/ui/register/controller/password_controller.dart';
+import 'package:expense_tracker_app/ui/login/controller/login_controller.dart';
 import 'package:expense_tracker_app/ui/login_google/button_google.dart';
 import 'package:expense_tracker_app/ui/login/widget/button_login.dart';
 import 'package:expense_tracker_app/ui/login/widget/text_button_forgot_password.dart';
@@ -19,6 +20,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final passwordController = Get.put(PasswordController());
+  final loginController = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(

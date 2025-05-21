@@ -1,5 +1,5 @@
 import 'package:expense_tracker_app/ui/home/home_page.dart';
-import 'package:expense_tracker_app/ui/login_google/signIn_with_google';
+import 'package:expense_tracker_app/ui/login_google/controller/signIn_with_google_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +19,7 @@ class ButtonGoogle extends StatelessWidget {
                 backgroundColor: Colors.white,
               ),
               onPressed: () async {
-                final userCredential = await signInWithGoogle();
+                final userCredential = await signInWithGoogleController();
                 if (userCredential != null) {
                   Get.to(HomePage());
                   Get.snackbar('Succeed', 'Sign in with Google successfully');

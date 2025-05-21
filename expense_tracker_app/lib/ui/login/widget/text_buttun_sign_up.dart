@@ -1,3 +1,4 @@
+import 'package:expense_tracker_app/app_routes.dart';
 import 'package:expense_tracker_app/ui/register/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,7 @@ class TextButtunSignUp extends StatelessWidget {
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
               onPressed: () {
-                Get.to(RegisterPage());
+                Get.toNamed('/register');
               },
               child: Text(
                 'Sign up now',

@@ -1,9 +1,10 @@
-import 'package:expense_tracker_app/ui/controller/password_controller/password_controller.dart';
-import 'package:expense_tracker_app/ui/login/widget/text_field_email.dart';
-import 'package:expense_tracker_app/ui/login/widget/text_field_password.dart';
+import 'package:expense_tracker_app/ui/register/controller/password_controller.dart';
+import 'package:expense_tracker_app/ui/register/controller/register_controller.dart';
 import 'package:expense_tracker_app/ui/register/widget/button_create_account.dart';
 import 'package:expense_tracker_app/ui/register/widget/text_field_confirm_password.dart';
+import 'package:expense_tracker_app/ui/register/widget/text_field_email_register.dart';
 import 'package:expense_tracker_app/ui/register/widget/text_field_name.dart';
+import 'package:expense_tracker_app/ui/register/widget/text_field_password_register.dart';
 import 'package:expense_tracker_app/widget/extension%20.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,7 @@ import 'package:get/get.dart';
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
   final passwordController = Get.find<PasswordController>();
+  final registerController = Get.find<RegisterController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +57,12 @@ class RegisterPage extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: context.screenHeight * 0.01),
-                      TextFieldName(),
+                      TextFieldName(
+                        firstNameController:
+                            registerController.firstNameController,
+                        lastNameController:
+                            registerController.lastNameController,
+                      ),
                       SizedBox(height: context.screenHeight * 0.02),
                       Row(
                         children: [
@@ -66,7 +73,7 @@ class RegisterPage extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: context.screenHeight * 0.01),
-                      TextFieldEmail(),
+                      TextFieldEmailRegister(),
                       SizedBox(height: context.screenHeight * 0.02),
                       Row(
                         children: [
@@ -79,7 +86,7 @@ class RegisterPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      TextFieldPassword(),
+                      TextFieldPasswordRegister(),
                       SizedBox(height: context.screenHeight * 0.01),
                       Row(
                         children: [

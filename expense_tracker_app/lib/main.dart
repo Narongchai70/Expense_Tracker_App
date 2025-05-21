@@ -1,4 +1,6 @@
 import 'package:expense_tracker_app/app_binding.dart';
+import 'package:expense_tracker_app/app_pages.dart';
+import 'package:expense_tracker_app/app_routes.dart';
 import 'package:expense_tracker_app/ui/login/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +25,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: '/login',
-      getPages: [
-        GetPage(name: '/login', page: () => LoginPage(), binding: AppBinding()),
-      ],
+      initialRoute: ('/login'),
+      getPages: appPages,
+      initialBinding: AppBinding(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

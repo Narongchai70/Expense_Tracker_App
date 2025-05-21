@@ -1,25 +1,16 @@
-import 'package:expense_tracker_app/ui/login/login_page.dart';
+import 'package:expense_tracker_app/widget/icon_button_logout.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:expense_tracker_app/ui/login_google/signIn_out_google.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Home', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+
         backgroundColor: Colors.green,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () async {
-              await signInOutGoogle();
-              Get.offAll(() => LoginPage());
-              Get.snackbar('Log Out', 'You have logged out.');
-            },
-          ),
-        ],
+        actions: [IconButtonLogout()],
       ),
       body: const Center(child: Text('Welcome!')),
     );
